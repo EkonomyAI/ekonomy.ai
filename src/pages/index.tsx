@@ -19,18 +19,18 @@ export default function Home() {
         <meta property="og:title" content="Ekonomy AI — Restaurant know-how. Ready for every shift." />
         <meta property="og:description" content={site.description} />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href={`https://${site.domain}/`} />
-        <meta property="og:url" content={`https://${site.domain}/`} />
+        <link rel="canonical" href={`${site.url}/`} />
+        <meta property="og:url" content={`${site.url}/`} />
         <meta property="og:site_name" content={site.name} />
         <meta name="twitter:card" content="summary" />
         <meta name="theme-color" content="#102A36" />
         <link rel="icon" type="image/svg+xml" href="/brand/ekonomyai-navy.svg" />
         <link rel="apple-touch-icon" href="/brand/ekonomyai-avatar-600.png" />
-        <meta property="og:image" content={`https://${site.domain}/brand/ekonomyai-avatar-600.png`} />
+        <meta property="og:image" content={`${site.url}/brand/ekonomyai-avatar-600.png`} />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="600" />
         <meta property="og:image:alt" content="Ekonomy AI — approved ivory E mark on midnight navy" />
-        <meta name="twitter:image" content={`https://${site.domain}/brand/ekonomyai-avatar-600.png`} />
+        <meta name="twitter:image" content={`${site.url}/brand/ekonomyai-avatar-600.png`} />
         <meta name="twitter:image:alt" content="Ekonomy AI company mark" />
       </Head>
       <a className="skipLink" href="#main">Skip to content</a>

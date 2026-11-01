@@ -1,7 +1,7 @@
+import config from '../../htk.config.mts';
+
 export const site = {
-  name: 'Ekonomy AI',
-  domain: 'ekonomy.ai',
+  ...config.site,
+  domain: new URL(config.site.url).hostname,
   product: 'ProvisionOS',
-  description:
-    'AI operating memory for restaurants, starting with operator coaching and training.',
 };
