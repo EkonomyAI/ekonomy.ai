@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { WorkflowPreview } from '@/components/WorkflowPreview';
+import { PilotPlanner } from '@/components/PilotPlanner';
 import { site } from '@/config/site';
 
 const capabilities = [
@@ -16,13 +18,17 @@ export default function Home() {
         <meta property="og:title" content="Ekonomy AI — Restaurant know-how. Ready for every shift." />
         <meta property="og:description" content={site.description} />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href={`https://${site.domain}/`} />
+        <meta property="og:url" content={`https://${site.domain}/`} />
+        <meta property="og:site_name" content={site.name} />
+        <meta name="twitter:card" content="summary" />
         <meta name="theme-color" content="#171e1b" />
       </Head>
       <a className="skipLink" href="#main">Skip to content</a>
       <header className="hero" id="top">
         <nav className="nav container" aria-label="Primary">
           <a className="brand" href="#top" aria-label="Ekonomy AI home"><span className="brandMark" aria-hidden="true">e.</span>ekonomy<span className="brandSuffix">ai</span></a>
-          <div className="navLinks"><a href="#product">ProvisionOS</a><a href="#approach">Our approach</a></div>
+          <div className="navLinks"><a href="#product">ProvisionOS</a><a href="#walkthrough">How it could work</a><a href="#approach">Our approach</a></div>
           <a className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></a>
         </nav>
         <div className="heroGrid container">
@@ -55,11 +61,18 @@ export default function Home() {
         <section className="capabilitySection" aria-label="What we are building">
           <div className="capabilityGrid container">{capabilities.map((item) => <article className="capability" key={item.number}><div className="capabilityTop"><span>{item.number}</span><span aria-hidden="true">↗</span></div><p className="eyebrow">{item.tag}</p><h3>{item.name}</h3><p>{item.text}</p></article>)}</div>
         </section>
+        <WorkflowPreview />
         <section className="approach section container" id="approach">
           <div><p className="eyebrow">Operator first. Always.</p><h2>Start with the shift.<br /><span className="muted">Not the platform pitch.</span></h2></div>
           <div className="approachSteps"><article><span>01 / Listen</span><h3>Find the repeated question.</h3><p>Start with the training gaps, manager questions, and handoffs that keep pulling you back in.</p></article><article><span>02 / Focus</span><h3>Work on one real workflow.</h3><p>Choose a focused use case and agree on what a useful result would look like for your team.</p></article><article><span>03 / Learn</span><h3>Measure what changes.</h3><p>Look at adoption, consistency, and time spent on repeat questions before expanding the scope.</p></article></div>
         </section>
-        <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>Exploring a design-partner pilot? Start with one workflow your team wants to improve.</p><div className="pilotPrompt"><strong>Which question do you answer every week?</strong><span>That’s a good place to start.</span></div><span className="contactNote">Pilot inquiries: contact details coming soon.</span></div></section>
+        <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>Exploring a design-partner pilot? Start with one workflow your team wants to improve.</p><PilotPlanner /><span className="contactNote">Pilot inquiries: contact details coming soon.</span></div></section>
+        <section className="faq section container" aria-labelledby="faq-title"><div><p className="eyebrow">A few practical questions</p><h2 id="faq-title">Before the first shift.</h2></div><div className="faqList">
+          <details><summary>Is this a live product demo?</summary><p>No. The walkthrough is an illustrative concept showing the workflows we’re exploring. It does not connect to restaurant systems or generate operational guidance.</p></details>
+          <details><summary>Does ProvisionOS replace a manager?</summary><p>No. The goal is to make your existing operating know-how easier to use. Your team remains responsible for decisions, coaching, and your approved safety procedures.</p></details>
+          <details><summary>What would a pilot start with?</summary><p>One repeated question or routine, an existing standard, and a small team willing to give feedback. Agree on what to measure before broadening the scope.</p></details>
+          <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>
+        </div></section>
       </main>
       <footer className="footer container"><a className="brand footerBrand" href="#top">ekonomy<span className="brandSuffix">ai</span></a><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
     </>

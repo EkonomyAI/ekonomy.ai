@@ -494,3 +494,45 @@ h2 {
   .briefingRow { gap: 8px; }
   .rowNumber { display: none; }
 }
+
+/* Interactive concept walkthrough and local-only pilot planner. */
+button,select,textarea { font:inherit; }
+button { cursor:pointer; }
+button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible { outline:3px solid #b84d21; outline-offset:4px; }
+.walkthrough { background:#eceee5; }
+.walkthroughHeading { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:70px; margin-bottom:42px; }
+.walkthroughHeading .sectionLede { font-size:17px; }
+.workflowChoices { display:flex; gap:12px; margin-bottom:24px; }
+.workflowChoices button { display:flex; gap:18px; align-items:center; flex:1; text-align:left; border:1px solid #b6c0b0; background:transparent; padding:20px; min-height:56px; border-radius:10px; color:var(--ink); }
+.workflowChoices button[aria-pressed="true"] { background:var(--ink); color:white; border-color:var(--ink); }
+.workflowChoices button span { color:#626e59; font-size:12px; }
+.workflowChoices button[aria-pressed="true"] span { color:var(--accent); }
+.workflowExample { display:grid; grid-template-columns:1fr 1.15fr; background:var(--paper); border-radius:18px; overflow:hidden; }
+.workflowQuestion,.workflowAnswer { padding:44px; min-width:0; }
+.workflowQuestion { background:#dce4d5; }
+.workflowQuestion .sampleTag { display:inline-block; margin-bottom:36px; color:#42503e; border-color:#a6b49d; }
+.workflowQuestion h3 { font-size:34px; line-height:1.15; }
+.workflowQuestion>p:last-child,.workflowDisclaimer { font-size:13px; color:#53614d; }
+.exampleGuidance { font-size:20px; }
+.exampleReference { font-size:12px; color:var(--muted); border-bottom:1px solid var(--line); padding-bottom:24px; }
+.exampleNext { margin-top:24px; }
+.exampleNext strong { font-size:13px; }
+.exampleNext p { font-size:15px; margin:10px 0 0; }
+.workflowDisclaimer { margin:20px 0 0; max-width:800px; }
+.pilotPlanner { max-width:780px; margin:44px auto 0; text-align:left; background:var(--paper); padding:36px; border-radius:18px; }
+.plannerHeading h3 { font-size:32px; margin-bottom:12px; }
+.pilot .plannerHeading p { font-size:14px; max-width:none; margin-bottom:24px; }
+.plannerFields { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px; }
+.plannerFields label,.briefLabel { display:block; font-size:13px; font-weight:600; }
+.plannerFields select { display:block; width:100%; min-width:0; margin-top:10px; min-height:48px; padding:10px; border:1px solid #a5b29c; border-radius:6px; background:white; color:var(--ink); font-size:14px; }
+.pilotPlanner textarea { width:100%; resize:vertical; margin-top:10px; padding:16px; line-height:1.6; font-size:14px; color:var(--ink); background:white; border:1px solid #a5b29c; border-radius:6px; }
+.plannerActions { display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:20px; }
+.plannerActions button { border:0; }
+.plannerActions>span { font-size:12px; color:var(--muted); }
+.pilot .copyStatus { font-size:13px; margin:14px 0 0; max-width:none; min-height:21px; }
+.faq { display:grid; grid-template-columns:1fr 1.2fr; gap:70px; }
+.faq details { border-bottom:1px solid var(--line); }
+.faq summary { cursor:pointer; padding:24px 4px; font-size:18px; line-height:1.4; }
+.faq details p { font-size:15px; color:var(--muted); padding:0 4px 24px; margin:0; }
+@media(max-width:1050px) { .navLinks { gap:14px; } .walkthroughHeading,.faq { gap:36px; } .workflowQuestion,.workflowAnswer { padding:30px; } }
+@media(max-width:760px) { .walkthroughHeading,.workflowExample,.faq { grid-template-columns:1fr; gap:20px; } .workflowExample { gap:0; } .workflowChoices { flex-direction:column; } .workflowChoices button { padding:16px; } .workflowQuestion h3 { font-size:30px; } .workflowQuestion .sampleTag { margin-bottom:24px; } .plannerFields { grid-template-columns:1fr; } .pilotPlanner { padding:24px 20px; } .workflowQuestion,.workflowAnswer { padding:28px 24px; } .navLinks { flex-wrap:wrap; gap:8px 20px; } }
