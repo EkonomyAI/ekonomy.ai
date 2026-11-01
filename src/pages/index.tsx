@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { WorkflowPreview } from '@/components/WorkflowPreview';
 import { PilotPlanner } from '@/components/PilotPlanner';
 import { site } from '@/config/site';
@@ -22,12 +23,20 @@ export default function Home() {
         <meta property="og:url" content={`https://${site.domain}/`} />
         <meta property="og:site_name" content={site.name} />
         <meta name="twitter:card" content="summary" />
-        <meta name="theme-color" content="#171e1b" />
+        <meta name="theme-color" content="#102A36" />
+        <link rel="icon" type="image/svg+xml" href="/brand/ekonomyai-navy.svg" />
+        <link rel="apple-touch-icon" href="/brand/ekonomyai-avatar-600.png" />
+        <meta property="og:image" content={`https://${site.domain}/brand/ekonomyai-avatar-600.png`} />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content="Ekonomy AI — approved ivory E mark on midnight navy" />
+        <meta name="twitter:image" content={`https://${site.domain}/brand/ekonomyai-avatar-600.png`} />
+        <meta name="twitter:image:alt" content="Ekonomy AI company mark" />
       </Head>
       <a className="skipLink" href="#main">Skip to content</a>
       <header className="hero" id="top">
         <nav className="nav container" aria-label="Primary">
-          <a className="brand" href="#top" aria-label="Ekonomy AI home"><span className="brandMark" aria-hidden="true">e.</span>ekonomy<span className="brandSuffix">ai</span></a>
+          <a className="brand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-reverse.svg" width={52} height={52} alt="" priority />ekonomy<span className="brandSuffix">ai</span></a>
           <div className="navLinks"><a href="#product">ProvisionOS</a><a href="#walkthrough">How it could work</a><a href="#approach">Our approach</a></div>
           <a className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></a>
         </nav>
@@ -74,7 +83,7 @@ export default function Home() {
           <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>
         </div></section>
       </main>
-      <footer className="footer container"><a className="brand footerBrand" href="#top">ekonomy<span className="brandSuffix">ai</span></a><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
+      <footer className="footer container"><a className="brand footerBrand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-mono.svg" width={52} height={52} alt="" />ekonomy<span className="brandSuffix">ai</span></a><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
     </>
   );
 }

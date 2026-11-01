@@ -1,10 +1,10 @@
 :root {
-  --ink:#17201b;
+  --ink:#102A36;
   --muted:#60675f;
-  --paper:#f9f9f3;
-  --accent:#ff976b;
+  --paper:#F5F1E8;
+  --accent:#32B8A1;
   --line:#dcded5;
-  --green:#263c31}
+  --green:#102A36}
 * {
   box-sizing:border-box}
 html {
@@ -48,7 +48,7 @@ p {
   position:relative;
   overflow:hidden;
   color:#fff;
-  background:radial-gradient(ellipse at 85% 55%,#36513b 0%,transparent 48%),linear-gradient(120deg,#141b18,#223229);
+  background:radial-gradient(ellipse at 85% 55%,#234a54 0%,transparent 48%),linear-gradient(120deg,#102A36,#173743);
   min-height:830px}
 .hero:after {
   content:"";
@@ -74,10 +74,10 @@ p {
   letter-spacing:-1.6px;
   font-weight:600}
 .brandMark {
-  font-size:36px;
-  line-height:1;
-  margin-right:5px;
-  color:var(--accent)}
+  width:52px;
+  height:52px;
+  flex-shrink:0;
+  object-fit:contain}
 .brandSuffix {
   font-size:12px;
   letter-spacing:-.2px;
