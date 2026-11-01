@@ -471,3 +471,26 @@ h2 {
 .pilotPrompt { display: grid; gap: 10px; margin: 28px auto 0; padding: 22px; max-width: 440px; border: 1px solid #b7c4ae; border-radius: 12px; }
 .pilotPrompt strong { font-size: 16px; font-weight: 500; }
 .pilotPrompt span { font-size: 13px; color: var(--muted); }
+
+/* Keep narrow screens and enlarged text comfortable without clipping content. */
+.heroGrid > *, .intro > *, .approach > *, .capabilityGrid > * {
+  min-width: 0;
+}
+.navLinks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.muted {
+  color: #6a7462;
+}
+@media (max-width: 380px) {
+  .container { width: calc(100% - 32px); }
+  .nav { gap: 12px; }
+  .navCta { gap: 6px; }
+  .hero h1 { font-size: clamp(36px, 10vw, 43px); }
+  .briefingTop { flex-wrap: wrap; }
+  .briefingTitle { font-size: 26px; }
+  .briefingRow { gap: 8px; }
+  .rowNumber { display: none; }
+}
