@@ -6,7 +6,7 @@ export default defineConfig({
     name: 'Ekonomy AI',
     title: 'Ekonomy AI | Restaurant know-how. Ready for every shift.',
     description: 'AI operating memory for restaurants, starting with operator coaching and training.',
-    url: 'https://ekonomy.ai',
+    url: 'https://www.ekonomy.ai',
     author: 'Ekonomy AI',
   },
   // Sitemap routes, not same-page navigation anchors.

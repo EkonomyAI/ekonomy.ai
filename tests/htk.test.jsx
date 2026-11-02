@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 test('real HTK build utility generates only canonical page routes', () => {
   execFileSync(process.execPath, ['--import', 'tsx', 'scripts/generate-sitemap.mts']);
   const xml = readFileSync('public/sitemap.xml', 'utf8');
-  assert.match(xml, /<loc>https:\/\/ekonomy.ai\/<\/loc>/);
+  assert.match(xml, /<loc>https:\/\/www.ekonomy.ai\/<\/loc>/);
   assert.equal((xml.match(/<url>/g) || []).length, 1);
   assert.ok(!xml.includes('#'));
   assert.match(xml, /<priority>1<\/priority>/);

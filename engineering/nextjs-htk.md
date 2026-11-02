@@ -55,18 +55,16 @@ and compare metadata/sitemap plus mobile and desktop appearance before landing.
 
 ## Verification and known limitations
 
-Local Next 16.2.6 static build, typecheck, lint, and all five tests passed.
-Exported title/canonical URL and sitemap were checked. Existing asset hash tests
-passed. Browser screenshot regression was not performed. Nested worktree builds
-emit Next's multiple-lockfile/root-inference warning but complete successfully.
+Release-check update: Next and eslint-config-next upgraded to 16.4.3; compatible
+transitive dependency patches applied. Typecheck, lint, all five tests and static
+export pass. Production-only audit reports zero vulnerabilities. Full audit
+retains 16 moderate development-tool findings rooted in minimatch <11.0.1.
+Do not use audit --force: it proposes an incompatible ESLint downgrade. A major
+minimatch override is not assumed compatible with legacy callable consumers.
+No critical/high findings remain after compatible remediation.
 
-Audit at integration time: 26 findings (1 low, 16 moderate, 8 high, 1 critical),
-identical counts and vulnerable package names to the pre-integration lockfile.
-The critical finding is in existing Next. No audit fix/major framework upgrade
-was folded into this change; dependency security remediation is needed before
-release. Static export is not a blanket assertion of immunity.
-
-Publication is blocked by unavailable Oiko runtime GitHub credentials. Branch
-`feat/nextjs-htk-integration` is local WIP pending verified bot access and human
-review. Next action: connect Oiko, verify API + transport, push source branch and
-open PR; do not merge/deploy automatically.
+Canonical metadata and sitemap use https://www.ekonomy.ai, consistent with the
+separate CNAME correction in PR #2. This branch is stacked on website PR #1;
+merge PR #1 first, then retarget this integration to master. PR #2 remains a
+separate change and has not been duplicated here. Build artifacts are not committed.
+Browser screenshot regression remains outstanding. No merge/deploy is authorized.
