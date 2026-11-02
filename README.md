@@ -6,7 +6,7 @@ Public website for [ekonomy.ai](https://ekonomy.ai), the umbrella company behind
 
 - Next.js static export
 - TypeScript
-- GitHub Pages via GitHub Actions, publishing committed `docs/`
+- GitHub Pages via GitHub Actions, building source on `master`
 - Custom domain via `CNAME`
 
 ## Development
@@ -33,16 +33,23 @@ verification, boundaries, and upstream feedback candidates.
 
 ## Publishing
 
-The `Deploy GitHub Pages` workflow publishes the committed `docs/` directory
-when changes land on `master`. It can also be run manually from Actions on
-`master`. It does not install dependencies or rebuild the site: build and
-commit updated static output as part of the reviewed change before publishing.
+The `Deploy GitHub Pages` workflow installs locked dependencies with `npm ci`
+through `make build`, generates a fresh static export, and runs typecheck, lint,
+and tests. Pull requests validate the build without deploying. Changes merged
+into `master` build and deploy through the `github-pages` environment. A manual
+run on `master` rebuilds and deploys too; runs on other branches never deploy.
 
-The workflow checks out without submodules, uploads the Pages artifact, and
-deploys through the `github-pages` environment using GitHub's Pages actions.
-Deployments share a concurrency group and do not cancel an in-progress deploy.
+The workflow uses Node.js 24.16.0, does not fetch private submodules, and consumes
+the published HTK package from npm. Only the deploy job receives Pages/OIDC write
+permissions. Deployment uploads the newly built `docs/`, never stale committed
+HTML. Keep `CNAME` and `.nojekyll` in the export; `make build` handles both.
 
-For initial activation, select **Settings → Pages → Build and deployment →
-Source → GitHub Actions** after this workflow is merged. Preserve the custom
-domain `www.ekonomy.ai` and **Enforce HTTPS**, then run the workflow on `master`
-and verify the deployment succeeds. The workflow does not change DNS.
+For local verification, run `make build`, `npm run typecheck`, `npm run lint`,
+and `npm test`. Review generated `docs/` changes alongside source changes when
+committing a local export. Open a PR targeting `master`; merge only after review.
+`make deploy` only explains this flow and does not commit or push.
+
+Pages must use **Settings → Pages → Build and deployment → Source → GitHub
+Actions**. Preserve `www.ekonomy.ai` and **Enforce HTTPS**. The workflow does not
+change DNS. After an approved merge, verify the successful deployment and live
+homepage rather than relying solely on a green build.

@@ -4,9 +4,11 @@ help:
 
 BUILD_DIR := docs
 
+.PHONY: help install dev clean build deploy
+
 ## install - install dependency packages
 install:
-	npm install
+	npm ci
 
 ## dev - start the Next.js development server
 dev: install
@@ -19,11 +21,10 @@ clean:
 ## build - build static GitHub Pages output
 build: clean install
 	npm run build
-	cp CNAME $(BUILD_DIR)/ || true
+	cp CNAME $(BUILD_DIR)/
 	touch $(BUILD_DIR)/.nojekyll
 
-## deploy - build and push GitHub Pages output
-deploy: build
-	git add $(BUILD_DIR)
-	git commit -m "Deploy `git rev-parse --verify HEAD`" --no-verify
-	git push origin main
+## deploy - explain the reviewed GitHub Pages deployment flow
+deploy:
+	@echo "Open a PR to master. After review and merge, GitHub Actions builds and deploys the site."
+	@echo "Use make build for a local static export; this target never pushes Git."

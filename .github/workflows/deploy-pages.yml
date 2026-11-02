@@ -3,38 +3,71 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: github-pages
+  group: github-pages-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    name: Upload committed docs site
+  build:
+    name: Build static site
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository without private submodules
         uses: actions/checkout@v4
         with:
           submodules: false
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.16.0'
+          cache: npm
+
+      - name: Build from locked dependencies
+        run: make build
+
+      - name: Check source
+        run: |
+          npm run typecheck
+          npm run lint
+          npm test
+
+      - name: Verify exported site
+        run: |
+          test -s docs/index.html
+          test -f docs/.nojekyll
+          cmp CNAME docs/CNAME
+          grep -q 'Restaurant know-how.' docs/index.html
+          test -s docs/sitemap.xml
 
       - name: Upload docs artifact
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
+  deploy:
+    name: Deploy built site
+    needs: build
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
