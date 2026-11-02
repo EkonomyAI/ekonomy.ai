@@ -8,10 +8,13 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "tsx --test tests/*.test.jsx"
+    "test": "tsx --test tests/*.test.jsx",
+    "prebuild": "npm run generate:sitemap",
+    "generate:sitemap": "tsx scripts/generate-sitemap.mts"
   },
   "dependencies": {
-    "next": "^16.2.6",
+    "@hacktoolkit/nextjs-htk": "0.3.0",
+    "next": "^16.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -19,7 +22,7 @@
     "@types/node": "^22.13.10",
     "@types/react": "19.0.10",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.6",
+    "eslint-config-next": "^16.4.3",
     "react-test-renderer": "^19.2.6",
     "tsx": "^4.23.15",
     "typescript": "^5.8.2"

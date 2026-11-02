@@ -23,3 +23,10 @@ make build
 ```
 
 The static site is generated into `docs/` for GitHub Pages.
+
+## Shared Next.js foundation
+
+This site consumes the published `@hacktoolkit/nextjs-htk` package for typed
+configuration and build-time sitemap generation. See
+[the integration and upgrade guide](engineering/nextjs-htk.md) for provenance,
+verification, boundaries, and upstream feedback candidates.
