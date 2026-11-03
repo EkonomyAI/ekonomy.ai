@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
-import { WorkflowPreview } from '@/components/WorkflowPreview';
+import { DemoPlayer } from '@/components/DemoPlayer';
+import { workflows } from '@/data/workflows';
 import { PilotPlanner } from '@/components/PilotPlanner';
 import { site } from '@/config/site';
 
@@ -14,9 +16,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{`${site.name} | Restaurant know-how. Ready for every shift.`}</title>
+        <title>{`${site.name} | The work behind every shift.`}</title>
         <meta name="description" content={site.description} />
-        <meta property="og:title" content="Ekonomy AI — Restaurant know-how. Ready for every shift." />
+        <meta property="og:title" content="Ekonomy AI — The work behind every shift." />
         <meta property="og:description" content={site.description} />
         <meta property="og:type" content="website" />
         <link rel="canonical" href={`${site.url}/`} />
@@ -33,19 +35,19 @@ export default function Home() {
         <meta name="twitter:image" content={`${site.url}/brand/ekonomyai-avatar-600.png`} />
         <meta name="twitter:image:alt" content="Ekonomy AI company mark" />
       </Head>
-      <a className="skipLink" href="#main">Skip to content</a>
+      <Link className="skipLink" href="#main">Skip to content</Link>
       <header className="hero" id="top">
         <nav className="nav container" aria-label="Primary">
-          <a className="brand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-reverse.svg" width={52} height={52} alt="" priority />ekonomy<span className="brandSuffix">ai</span></a>
-          <div className="navLinks"><a href="#product">ProvisionOS</a><a href="#walkthrough">How it could work</a><a href="#approach">Our approach</a></div>
-          <a className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></a>
+          <Link className="brand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-reverse.svg" width={52} height={52} alt="" priority />ekonomy<span className="brandSuffix">ai</span></Link>
+          <div className="navLinks"><Link href="#product">ProvisionOS</Link><Link href="/workflows/">Workflows</Link><Link href="#approach">Our approach</Link></div>
+          <Link className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></Link>
         </nav>
         <div className="heroGrid container">
           <div className="heroCopy">
             <p className="eyebrow light">Built around the people who run restaurants</p>
-            <h1>Restaurant know-how.<br /><span>Ready for every shift.</span></h1>
-            <p className="lede">Your standards. Your experience. A stronger starting point for every manager. Meet ProvisionOS, from Ekonomy AI.</p>
-            <a className="button buttonLight" href="#product">Discover ProvisionOS <span aria-hidden="true">↗</span></a>
+            <h1>The work behind every shift.<br /><span>Finally connected.</span></h1>
+            <p className="lede">Scheduling, payroll preparation, cash reconciliation, and staff know-how. Explore reviewable workflows with ProvisionOS, from Ekonomy AI.</p>
+            <Link className="button buttonLight" href="/workflows/">See the workflows <span aria-hidden="true">↗</span></Link>
           </div>
           <div className="shiftScene" aria-label="Illustrative shift briefing, not a live product screen">
             <div className="sceneCaption"><span className="statusDot" /> THE SHIFT STARTS HERE</div>
@@ -60,7 +62,7 @@ export default function Home() {
             <span className="sceneNote">A little less repetition. A little more room to lead.</span>
           </div>
         </div>
-        <div className="heroBottom container"><span>Independent restaurants. Shared ambition.</span><a href="#approach">Built for the everyday <span aria-hidden="true">↓</span></a></div>
+        <div className="heroBottom container"><span>Independent restaurants. Shared ambition.</span><Link href="#approach">Built for the everyday <span aria-hidden="true">↓</span></Link></div>
       </header>
       <main id="main">
         <section className="intro section container" id="product">
@@ -70,7 +72,7 @@ export default function Home() {
         <section className="capabilitySection" aria-label="What we are building">
           <div className="capabilityGrid container">{capabilities.map((item) => <article className="capability" key={item.number}><div className="capabilityTop"><span>{item.number}</span><span aria-hidden="true">↗</span></div><p className="eyebrow">{item.tag}</p><h3>{item.name}</h3><p>{item.text}</p></article>)}</div>
         </section>
-        <WorkflowPreview />
+        <section className="homepageDemo container" id="walkthrough"><p className="eyebrow">Three requests. Three reviewable work products.</p><h2>Staff the week. Prepare payroll. Explain the difference.</h2><DemoPlayer slug="homepage" title="Scheduling, payroll preparation and cash reconciliation" autoPlay/><p>Fictional workflow preview, not live execution. Read the complete scenes and review boundaries below.</p></section><section className="homepageWorkflows container"><h2>Start with the work you need done.</h2><div className="workflowCards">{workflows.map(w => <Link key={w.slug} href={`/solutions/${w.slug}/`}><h3>{w.shortTitle} ↗</h3><p>{w.description}</p></Link>)}</div><p>Workflow examples, not a promise of general availability. Integrations and delivery scope must be confirmed during setup.</p></section>
         <section className="approach section container" id="approach">
           <div><p className="eyebrow">Operator first. Always.</p><h2>Start with the shift.<br /><span className="muted">Not the platform pitch.</span></h2></div>
           <div className="approachSteps"><article><span>01 / Listen</span><h3>Find the repeated question.</h3><p>Start with the training gaps, manager questions, and handoffs that keep pulling you back in.</p></article><article><span>02 / Focus</span><h3>Work on one real workflow.</h3><p>Choose a focused use case and agree on what a useful result would look like for your team.</p></article><article><span>03 / Learn</span><h3>Measure what changes.</h3><p>Look at adoption, consistency, and time spent on repeat questions before expanding the scope.</p></article></div>
@@ -83,7 +85,7 @@ export default function Home() {
           <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>
         </div></section>
       </main>
-      <footer className="footer container"><a className="brand footerBrand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-mono.svg" width={52} height={52} alt="" />ekonomy<span className="brandSuffix">ai</span></a><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
+      <footer className="footer container"><Link className="brand footerBrand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-mono.svg" width={52} height={52} alt="" />ekonomy<span className="brandSuffix">ai</span></Link><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
     </>
   );
 }

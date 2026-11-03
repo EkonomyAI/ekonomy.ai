@@ -44,7 +44,7 @@ jobs:
           test -s docs/index.html
           test -f docs/.nojekyll
           cmp CNAME docs/CNAME
-          grep -q 'Restaurant know-how.' docs/index.html
+          grep -q 'The work behind every shift.' docs/index.html
           test -s docs/sitemap.xml
 
       - name: Upload docs artifact

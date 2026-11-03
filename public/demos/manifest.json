@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "restaurant-staff-scheduling",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 177851,
+    "mp4Bytes": 68218
+  },
+  {
+    "slug": "payroll-preparation",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 185068,
+    "mp4Bytes": 69398
+  },
+  {
+    "slug": "cash-deposit-reconciliation",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 169873,
+    "mp4Bytes": 68171
+  },
+  {
+    "slug": "restaurant-financial-reporting",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 172604,
+    "mp4Bytes": 68391
+  },
+  {
+    "slug": "restaurant-menu-management",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 161991,
+    "mp4Bytes": 63868
+  },
+  {
+    "slug": "restaurant-training-onboarding",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 177744,
+    "mp4Bytes": 70955
+  },
+  {
+    "slug": "restaurant-purchasing",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 170762,
+    "mp4Bytes": 65232
+  },
+  {
+    "slug": "restaurant-reputation",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 170925,
+    "mp4Bytes": 68285
+  },
+  {
+    "slug": "restaurant-operations",
+    "width": 1000,
+    "height": 750,
+    "duration": 20,
+    "gifBytes": 184862,
+    "mp4Bytes": 71683
+  },
+  {
+    "slug": "homepage",
+    "width": 1000,
+    "height": 750,
+    "duration": 36,
+    "gifBytes": 446803,
+    "mp4Bytes": 180244
+  }
+]
