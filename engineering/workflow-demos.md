@@ -36,9 +36,15 @@ actual exported dimensions, target durations and byte sizes.
   universal POS publishing, and automated government filings are not demonstrated.
 - Cash example intentionally retains the $40 exception; financial estimates remain
   labeled, and onboarding acknowledgment is not proof of competence.
-- The existing website publishes no verified contact or booking destination. Do not
-  invent one. Workflow exploration CTAs work, but the requested inquiry CTA remains
-  blocked pending an owner-approved destination. Existing local planner is explicitly
-  labeled as not submitting information.
+- Workflow exploration CTAs remain the public next step until an inquiry destination
+  is approved. The local planner explains that it does not submit information.
 - The longer three-minute film remains a future production plan, not a delivered
   asset or replacement for these short previews.
+
+## Copy review
+
+The exported conversations use one `Workflow preview` label. Dialogue focuses on
+the manager’s request and next decision; scope and setup details live in page
+sections and FAQs, not repeated disclaimers inside every message. All underlying
+records remain synthetic. Regenerate GIFs, videos and posters together after scene
+copy changes so transcripts and media stay consistent.

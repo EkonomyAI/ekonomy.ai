@@ -4,79 +4,79 @@
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 177851,
-    "mp4Bytes": 68218
+    "gifBytes": 159267,
+    "mp4Bytes": 61705
   },
   {
     "slug": "payroll-preparation",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 185068,
-    "mp4Bytes": 69398
+    "gifBytes": 165054,
+    "mp4Bytes": 65739
   },
   {
     "slug": "cash-deposit-reconciliation",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 169873,
-    "mp4Bytes": 68171
+    "gifBytes": 164455,
+    "mp4Bytes": 65300
   },
   {
     "slug": "restaurant-financial-reporting",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 172604,
-    "mp4Bytes": 68391
+    "gifBytes": 160077,
+    "mp4Bytes": 63538
   },
   {
     "slug": "restaurant-menu-management",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 161991,
-    "mp4Bytes": 63868
+    "gifBytes": 156844,
+    "mp4Bytes": 60637
   },
   {
     "slug": "restaurant-training-onboarding",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 177744,
-    "mp4Bytes": 70955
+    "gifBytes": 170742,
+    "mp4Bytes": 65263
   },
   {
     "slug": "restaurant-purchasing",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 170762,
-    "mp4Bytes": 65232
+    "gifBytes": 159789,
+    "mp4Bytes": 60545
   },
   {
     "slug": "restaurant-reputation",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 170925,
-    "mp4Bytes": 68285
+    "gifBytes": 168001,
+    "mp4Bytes": 62857
   },
   {
     "slug": "restaurant-operations",
     "width": 1000,
     "height": 750,
     "duration": 20,
-    "gifBytes": 184862,
-    "mp4Bytes": 71683
+    "gifBytes": 173713,
+    "mp4Bytes": 65004
   },
   {
     "slug": "homepage",
     "width": 1000,
     "height": 750,
     "duration": 36,
-    "gifBytes": 446803,
-    "mp4Bytes": 180244
+    "gifBytes": 414255,
+    "mp4Bytes": 166767
   }
 ]
