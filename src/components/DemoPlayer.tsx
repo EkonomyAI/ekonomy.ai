@@ -1,5 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-export function DemoPlayer({ slug, title, autoPlay = false }: {slug: string; title: string; autoPlay?: boolean}) {
+type DemoPlayerProps = {slug: string; title: string; autoPlay?: boolean};
+
+export function DemoPlayer(props: DemoPlayerProps) {
+ // Dynamic routes reuse the page. Remount media and playback state together;
+ // changing a nested source alone does not reset the browser's selected video.
+ return <WorkflowVideo key={props.slug} {...props} />;
+}
+
+function WorkflowVideo({ slug, title, autoPlay = false }: DemoPlayerProps) {
  const ref = useRef<HTMLVideoElement>(null);
  const [playing, setPlaying] = useState(false);
  useEffect(() => {

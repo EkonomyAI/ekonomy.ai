@@ -39,20 +39,20 @@ export default function Home() {
       <header className="hero" id="top">
         <nav className="nav container" aria-label="Primary">
           <Link className="brand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-reverse.svg" width={52} height={52} alt="" priority />ekonomy<span className="brandSuffix">ai</span></Link>
-          <div className="navLinks"><Link href="#product">ProvisionOS</Link><Link href="/workflows/">Workflows</Link><Link href="#approach">Our approach</Link></div>
+          <div className="navLinks"><Link href="#product">Ekonomy AI</Link><Link href="/workflows/">Workflows</Link><Link href="#approach">Our approach</Link></div>
           <Link className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></Link>
         </nav>
         <div className="heroGrid container">
           <div className="heroCopy">
             <p className="eyebrow light">Built around the people who run restaurants</p>
             <h1>The work behind every shift.<br /><span>Finally connected.</span></h1>
-            <p className="lede">Scheduling, payroll preparation, cash reconciliation, and staff know-how. Explore reviewable workflows with ProvisionOS, from Ekonomy AI.</p>
+            <p className="lede">Scheduling, payroll preparation, cash reconciliation, and staff know-how. Explore reviewable workflows with Ekonomy AI.</p>
             <Link className="button buttonLight" href="/workflows/">See the workflows <span aria-hidden="true">↗</span></Link>
           </div>
           <div className="shiftScene" aria-label="Shift briefing">
             <div className="sceneCaption"><span className="statusDot" /> THE SHIFT STARTS HERE</div>
             <div className="briefing">
-              <div className="briefingTop"><span>ProvisionOS</span><span className="sampleTag">Concept preview</span></div>
+              <div className="briefingTop"><span>Ekonomy AI</span><span className="sampleTag">Concept preview</span></div>
               <p className="briefingTitle">Good service starts<br />before the first order.</p>
               <div className="briefingRow"><span className="rowIcon" aria-hidden="true">↗</span><div><strong>Before the rush</strong><p>Review today’s priorities.</p></div><span className="rowNumber">01</span></div>
               <div className="briefingRow"><span className="rowIcon" aria-hidden="true">≋</span><div><strong>Your way of doing things</strong><p>Keep house standards close.</p></div><span className="rowNumber">02</span></div>
@@ -66,7 +66,7 @@ export default function Home() {
       </header>
       <main id="main">
         <section className="intro section container" id="product">
-          <p className="eyebrow">Introducing ProvisionOS</p>
+          <p className="eyebrow">Introducing Ekonomy AI</p>
           <div><h2>Your best operator can’t be<br className="desktopBreak" /> on every shift.</h2><p className="sectionLede">But their experience shouldn’t leave when they do. We’re building practical AI tools that help restaurant teams carry the owner’s know-how into the everyday.</p></div>
         </section>
         <section className="capabilitySection" aria-label="What we are building">
@@ -80,7 +80,7 @@ export default function Home() {
         <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>Exploring a design-partner pilot? Start with one workflow your team wants to improve.</p><PilotPlanner /></div></section>
         <section className="faq section container" aria-labelledby="faq-title"><div><p className="eyebrow">A few practical questions</p><h2 id="faq-title">Before the first shift.</h2></div><div className="faqList">
           <details><summary>Which systems can we use?</summary><p>Start with the records your team already uses. We confirm supported formats and integrations when scoping your pilot.</p></details>
-          <details><summary>Does ProvisionOS replace a manager?</summary><p>No. The goal is to make your existing operating know-how easier to use. Your team remains responsible for decisions, coaching, and your approved safety procedures.</p></details>
+          <details><summary>Does Ekonomy AI replace a manager?</summary><p>No. The goal is to make your existing operating know-how easier to use. Your team remains responsible for decisions, coaching, and your approved safety procedures.</p></details>
           <details><summary>What would a pilot start with?</summary><p>One repeated question or routine, an existing standard, and a small team willing to give feedback. Agree on what to measure before broadening the scope.</p></details>
           <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>
         </div></section>

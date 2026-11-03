@@ -7,7 +7,7 @@ export function PilotPlanner() {
   const [workflow, setWorkflow] = useState(workflows[0]);
   const [outcome, setOutcome] = useState(outcomes[0]);
   const [status, setStatus] = useState('');
-  const brief = `ProvisionOS pilot discussion brief\n\nWorkflow: ${workflow}\nDesired outcome: ${outcome}\n\nStarting point: Pick one team and one existing operating standard.\nBefore starting: Agree on the baseline, review period, and a person responsible for feedback.\nReview together: Was the guidance useful, was it followed, and what still needed a manager’s judgment?\n\nDiscussion draft only. No pilot has been requested or booked.`;
+  const brief = `Ekonomy AI pilot discussion brief\n\nWorkflow: ${workflow}\nDesired outcome: ${outcome}\n\nStarting point: Pick one team and one existing operating standard.\nBefore starting: Agree on the baseline, review period, and a person responsible for feedback.\nReview together: Was the guidance useful, was it followed, and what still needed a manager’s judgment?\n\nDiscussion draft only. No pilot has been requested or booked.`;
   async function copyBrief() {
     try {
       await navigator.clipboard.writeText(brief);
