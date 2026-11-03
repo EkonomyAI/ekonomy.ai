@@ -49,7 +49,7 @@ export default function Home() {
             <p className="lede">Scheduling, payroll preparation, cash reconciliation, and staff know-how. Explore reviewable workflows with ProvisionOS, from Ekonomy AI.</p>
             <Link className="button buttonLight" href="/workflows/">See the workflows <span aria-hidden="true">↗</span></Link>
           </div>
-          <div className="shiftScene" aria-label="Illustrative shift briefing, not a live product screen">
+          <div className="shiftScene" aria-label="Shift briefing">
             <div className="sceneCaption"><span className="statusDot" /> THE SHIFT STARTS HERE</div>
             <div className="briefing">
               <div className="briefingTop"><span>ProvisionOS</span><span className="sampleTag">Concept preview</span></div>
@@ -79,7 +79,7 @@ export default function Home() {
         </section>
         <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>Exploring a design-partner pilot? Start with one workflow your team wants to improve.</p><PilotPlanner /></div></section>
         <section className="faq section container" aria-labelledby="faq-title"><div><p className="eyebrow">A few practical questions</p><h2 id="faq-title">Before the first shift.</h2></div><div className="faqList">
-          <details><summary>Is this a live product demo?</summary><p>These are illustrative previews with sample data. Pilot scope and supported integrations are confirmed during setup.</p></details>
+          <details><summary>Which systems can we use?</summary><p>Start with the records your team already uses. We confirm supported formats and integrations when scoping your pilot.</p></details>
           <details><summary>Does ProvisionOS replace a manager?</summary><p>No. The goal is to make your existing operating know-how easier to use. Your team remains responsible for decisions, coaching, and your approved safety procedures.</p></details>
           <details><summary>What would a pilot start with?</summary><p>One repeated question or routine, an existing standard, and a small team willing to give feedback. Agree on what to measure before broadening the scope.</p></details>
           <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>

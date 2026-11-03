@@ -6,16 +6,16 @@ import React from 'react';
 import {Conversation} from '../src/components/Conversation.tsx';
 test('nine distinct workflows with bounded fictional scenes and substantive page data',()=>{
  assert.equal(workflows.length,9);assert.equal(new Set(workflows.map(w=>w.slug)).size,9);
- for(const w of workflows){assert.equal(w.messages.length,5);assert.ok(w.faq.length>=2);assert.ok(w.inputs.length>=2);assert.ok(w.steps.length>=3);assert.ok(w.availability.length>30);for(let frame=0;frame<5;frame++){const html=renderToStaticMarkup(React.createElement(Conversation,{workflow:w,frame}));assert.ok(html.includes('Workflow preview'));assert.equal((html.match(/class="message /g)||[]).length,frame+1);}}
+ for(const w of workflows){assert.equal(w.messages.length,5);assert.ok(w.faq.length>=2);assert.ok(w.inputs.length>=2);assert.ok(w.steps.length>=3);assert.ok(w.availability.length>30);for(let frame=0;frame<5;frame++){const html=renderToStaticMarkup(React.createElement(Conversation,{workflow:w,frame}));assert.ok(html.includes('workspaceSearch'));assert.equal((html.match(/class="message /g)||[]).length,frame+1);}}
 });
 test('cash difference remains open and no payroll submission is depicted',()=>{
  const cash=workflows.find(w=>w.slug==='cash-deposit-reconciliation');const text=JSON.stringify(cash);assert.match(text,/1,240/);assert.match(text,/1,200/);assert.match(text,/40/);assert.match(cash.artifact.status,/open/i);
  const payroll=workflows.find(w=>w.slug==='payroll-preparation');assert.match(payroll.limitations,/submi|finali/i);
 });
-test('demo copy uses one preview label without interrupting dialogue',()=>{
+test('demo chrome has no disclaimer labels interrupting dialogue',()=>{
  for(const w of workflows){
   const html=renderToStaticMarkup(React.createElement(Conversation,{workflow:w}));
-  assert.equal((html.match(/Workflow preview/g)||[]).length,1);
+  assert.doesNotMatch(html,/Workflow preview|illustrative workflow|fictional data|illustration only|not connected/i);
   assert.doesNotMatch(w.messages.map(m=>m.text).join(' '),/fictional|No external action|No money has moved|not submission/);
  }
 });
