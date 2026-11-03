@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { DemoPlayer } from '@/components/DemoPlayer';
 import { workflows } from '@/data/workflows';
-import { PilotPlanner } from '@/components/PilotPlanner';
 import { site } from '@/config/site';
 
 const capabilities = [
@@ -40,7 +39,7 @@ export default function Home() {
         <nav className="nav container" aria-label="Primary">
           <Link className="brand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-reverse.svg" width={52} height={52} alt="" priority />ekonomy<span className="brandSuffix">ai</span></Link>
           <div className="navLinks"><Link href="#product">Ekonomy AI</Link><Link href="/workflows/">Workflows</Link><Link href="#approach">Our approach</Link></div>
-          <Link className="navCta" href="#pilot">Explore a pilot <span aria-hidden="true">↗</span></Link>
+          <Link className="navCta" href="/workflows/">Explore workflows <span aria-hidden="true">↗</span></Link>
         </nav>
         <div className="heroGrid container">
           <div className="heroCopy">
@@ -77,12 +76,11 @@ export default function Home() {
           <div><p className="eyebrow">Operator first. Always.</p><h2>Start with the shift.<br /><span className="muted">Not the platform pitch.</span></h2></div>
           <div className="approachSteps"><article><span>01 / Listen</span><h3>Find the repeated question.</h3><p>Start with the training gaps, manager questions, and handoffs that keep pulling you back in.</p></article><article><span>02 / Focus</span><h3>Work on one real workflow.</h3><p>Choose a focused use case and agree on what a useful result would look like for your team.</p></article><article><span>03 / Learn</span><h3>Measure what changes.</h3><p>Look at adoption, consistency, and time spent on repeat questions before expanding the scope.</p></article></div>
         </section>
-        <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>Exploring a design-partner pilot? Start with one workflow your team wants to improve.</p><PilotPlanner /></div></section>
+        <section className="pilot" id="pilot"><div className="container pilotInner"><p className="eyebrow">Let’s build around real work</p><h2>Better shifts.<br />More room to lead.</h2><p>See how scheduling, payroll preparation, and cash reconciliation work—from the first request to the result.</p><Link className="button buttonDark" href="/workflows/">Explore the workflows <span aria-hidden="true">↗</span></Link></div></section>
         <section className="faq section container" aria-labelledby="faq-title"><div><p className="eyebrow">A few practical questions</p><h2 id="faq-title">Before the first shift.</h2></div><div className="faqList">
           <details><summary>Which systems can we use?</summary><p>Start with the records your team already uses. We confirm supported formats and integrations when scoping your pilot.</p></details>
           <details><summary>Does Ekonomy AI replace a manager?</summary><p>No. The goal is to make your existing operating know-how easier to use. Your team remains responsible for decisions, coaching, and your approved safety procedures.</p></details>
           <details><summary>What would a pilot start with?</summary><p>One repeated question or routine, an existing standard, and a small team willing to give feedback. Agree on what to measure before broadening the scope.</p></details>
-          <details><summary>Where does my discussion brief go?</summary><p>Nowhere unless you copy it yourself. The planner runs in this page, sends no information, and does not save your choices. It does not book or request a pilot.</p></details>
         </div></section>
       </main>
       <footer className="footer container"><Link className="brand footerBrand" href="#top" aria-label="Ekonomy AI home"><Image className="brandMark" src="/brand/ekonomyai-mono.svg" width={52} height={52} alt="" />ekonomy<span className="brandSuffix">ai</span></Link><p>Practical intelligence. Human experience.</p><span>© {new Date().getFullYear()} Ekonomy AI</span></footer>
